@@ -1,14 +1,14 @@
 # Multi-stage build for optimized image size
-FROM python:3.10-slim as base
+FROM python:3.10-slim AS base
 
 # Install system dependencies
-RUN apt-get update && apt-get install -y \
+# Set non-interactive frontend to avoid prompts
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install minimal system dependencies
+# Using opencv-python-headless eliminates need for GUI libraries
+RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
-    libgl1-mesa-glx \
-    libglib2.0-0 \
-    libsm6 \
-    libxext6 \
-    libxrender-dev \
     libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
