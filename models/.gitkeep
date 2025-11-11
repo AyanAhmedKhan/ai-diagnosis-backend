@@ -1,0 +1,4 @@
+# Place your TorchScript model files here:
+# - deit3_best_traced.pt
+# - vit_best_traced.pt
+
