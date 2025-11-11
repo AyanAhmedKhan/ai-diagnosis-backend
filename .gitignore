@@ -7,10 +7,10 @@ env/
 venv/
 ENV/
 .venv
-*.pt
-*.pth
-models/*.pt
-!models/.gitkeep
+# Model files - now included in repository
+# *.pt
+# *.pth
+# models/*.pt
 uploads/
 *.log
 .DS_Store
